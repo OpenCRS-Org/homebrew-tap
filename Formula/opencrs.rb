@@ -67,6 +67,10 @@ class Opencrs < Formula
     end
 
     install_binary_aliases!
+    man1.install "man/opencrs.1"
+    bash_completion.install "completions/opencrs.bash" => "opencrs"
+    zsh_completion.install "completions/_opencrs"
+    fish_completion.install "completions/opencrs.fish"
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
