@@ -1,25 +1,25 @@
 class Opencrs < Formula
   desc "Tooling for OpenCRS, the Open Creative Requirements Specification"
   homepage "https://opencrs.dev"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.0/opencrs-cli-aarch64-apple-darwin.tar.xz"
-      sha256 "4be66f5d7e739788d212bd06827ede87a0861396205b8119f1833b6a413e2183"
+      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.1/opencrs-cli-aarch64-apple-darwin.tar.xz"
+      sha256 "ef21855ed95092fd16e83cb7795e2c979ebf35c1444452f21f585993619821fa"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.0/opencrs-cli-x86_64-apple-darwin.tar.xz"
-      sha256 "de61b945a3f8ccc1937ba09c2381385eb41c1302bb7dd5da7c40eb21bd29356e"
+      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.1/opencrs-cli-x86_64-apple-darwin.tar.xz"
+      sha256 "8570e32fc987cd29128aab4eb679e8c66b22118a206fb04cf413650dd25f9b4e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.0/opencrs-cli-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "7ea434325c6931e96308bbc8d933fc205cbbc35f8e30b218afdad070cb57d332"
+      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.1/opencrs-cli-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "1a0feeec706f22526e7ca54dc1b73c2ab11334148252ab3e2f3b205707ebd64d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.0/opencrs-cli-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e62a1d543b41576653479b3dcbf4aa3ed982eecdeeba3f3d9193bd773e292897"
+      url "https://github.com/OpenCRS-Org/opencrs/releases/download/v0.1.1/opencrs-cli-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2f2fdb6bcae3ef4406346b186e3618da2e174d33caebd06c82bf1ce6f659e016"
     end
   end
   license "Apache-2.0"
@@ -67,10 +67,6 @@ class Opencrs < Formula
     end
 
     install_binary_aliases!
-    man1.install "man/opencrs.1"
-    bash_completion.install "completions/opencrs.bash" => "opencrs"
-    zsh_completion.install "completions/_opencrs"
-    fish_completion.install "completions/opencrs.fish"
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
